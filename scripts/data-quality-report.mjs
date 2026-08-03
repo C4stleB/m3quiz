@@ -1,4 +1,5 @@
 import { mkdir, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { validateFile, normalizeQuestion } from './validate-data.mjs';
 
 function escapeCell(value) {
@@ -104,7 +105,9 @@ async function main() {
   if (result.errors.length > 0) process.exitCode = 1;
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && fileURLToPath(import.meta.url) === fileURLToPath(new URL(`file://${process.argv[1]}`))) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
