@@ -1,0 +1,48 @@
+name: Question correction
+
+description: Report an inaccurate, duplicated, unclear, or unsupported question
+
+title: "[Question] "
+
+labels: ["content"]
+
+body:
+  - type: input
+    id: question-id
+    attributes:
+      label: Question ID
+      placeholder: "Example: 408"
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problem type
+      options:
+        - Incorrect answer or calculation
+        - Unsupported or outdated factual claim
+        - Duplicate or near-duplicate question
+        - Unclear Japanese wording
+        - Category or formatting problem
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should be corrected?
+      description: Explain the problem and the proposed correction.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Add primary or reliable sources with access dates for factual corrections.
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Content check
+      options:
+        - label: This report does not reproduce confidential or copyrighted assessment content.
+          required: true
