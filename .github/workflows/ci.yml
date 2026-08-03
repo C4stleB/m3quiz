@@ -19,4 +19,12 @@ jobs:
           node-version: 20
       - run: npm install --ignore-scripts
       - run: npm run validate
+      - run: npm run report:data
       - run: npm test
+      - name: Upload data-quality report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-quality-report
+          path: reports/data-quality.md
+          if-no-files-found: warn
