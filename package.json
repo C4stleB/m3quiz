@@ -1,0 +1,16 @@
+{
+  "name": "m3quiz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source Japanese reasoning quiz and question bank",
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes http-server . -p 8080 -c-1",
+    "validate": "node scripts/validate-data.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
