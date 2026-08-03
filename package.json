@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx --yes http-server . -p 8080 -c-1",
-    "validate": "node scripts/validate-data.mjs",
+    "validate": "node scripts/validate-data.mjs && node scripts/validate-metadata.mjs",
     "report:data": "node scripts/data-quality-report.mjs",
     "check": "npm run validate && npm run report:data && npm test",
     "test": "node --test"

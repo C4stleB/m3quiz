@@ -1,0 +1,5 @@
+questionId,reviewStatus,sourceUrl,sourceTitle,reviewedAt,notes
+18,needs-review,,,,Answer says 25/52 while the explanation derives 22/52.
+50,needs-review,,,,Answer says 90 but the explanation calculates 85.
+180,needs-review,,,,Answer says 11/36 while the explanation corrects the result to 5/9.
+289,needs-review,,,,Answer and explanation do not match the stated combination count.
